@@ -20,7 +20,7 @@
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
                         <div class="flex-shrink-0 text-white">
-                           Notre Dame of Marbel University
+                           Alumni Directory
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
