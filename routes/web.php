@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +37,5 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
 //Admins
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin/home');
+    Route::get('/admin/profile', [AdminController::class, 'profilepage'])->name('admin/profile');
 });
