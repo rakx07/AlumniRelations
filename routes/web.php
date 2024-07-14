@@ -27,4 +27,12 @@ Route::controller(AuthController::class)->group(function(){
 
     Route::get('logout', 'logout')->middleware('auth')->name('logout');
 });
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Normal Guest/User
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
+//Admins
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+    Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin/home');
+});
