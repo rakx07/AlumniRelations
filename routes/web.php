@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,6 @@ Route::get('/', function () {
 });
 
 Route::controller(AuthController::class)->group(function(){
-    Route::get('/register', 'register')->name('register');
+    Route::get('register', 'register')->name('register');
+    Route::get('register', 'registerSave')->name('register.save');
 });
